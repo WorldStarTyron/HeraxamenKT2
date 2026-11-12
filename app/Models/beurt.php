@@ -3,14 +3,16 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class beurt extends Model
 {
-    protected $table = 'beurten';
+    protected $table = 'beurts';
+
     protected $primaryKey = 'beurt_id';
+
     protected $fillable = [
-        'afspraken_id',
-        'klant_id',
+        'afspraak_id',
         'beurt_naam',
         'beurt_datum',
         'beurt_tijd',
@@ -18,5 +20,9 @@ class beurt extends Model
     ];
 
     public $timestamps = false;
-    
+
+    public function afspraak(): BelongsTo
+    {
+        return $this->belongsTo(Afspraken::class, 'afspraak_id', 'afspraak_id');
+    }
 }

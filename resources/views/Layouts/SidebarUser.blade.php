@@ -31,7 +31,7 @@
             </a>
          </li>
          <li>
-            <a href="" class="flex items-center px-2 py-1.5 text-gray-600 rounded-lg hover:bg-gray-100 hover:text-blue-600 group">
+            <a href="{{route('KlantenAfspraken.index')}}" class="flex items-center px-2 py-1.5 text-gray-600 rounded-lg hover:bg-gray-100 hover:text-blue-600 group">
                <svg class="shrink-0 w-5 h-5 transition duration-75 group-hover:text-blue-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0ZM12 9v4m0 4h.01"/></svg>
                <span class="flex-1 ms-3 whitespace-nowrap">Afspraken</span>
                <span class="inline-flex items-center justify-center w-5 h-5 ms-2 text-xs font-medium text-red-700 bg-red-100 border border-red-200 rounded-full">0</span>

@@ -13,14 +13,13 @@ return new class extends Migration
     {
         Schema::create('beurts', function (Blueprint $table) {
             $table->increments('beurt_id');
-            $table->unsignedInteger('klant_id');
+            $table->unsignedInteger('afspraak_id');
             $table->string('beurt_naam');
             $table->date('beurt_datum');
             $table->time('beurt_tijd');
-             $table->integer('maximaal_aantal_auto');
-       
+            $table->integer('maximaal_aantal_auto');
 
-            $table->foreign('klant_id')->references('klant_id')->on('klanten')->onDelete('cascade');
+            $table->foreign('afspraak_id')->references('afspraak_id')->on('afsprakens')->onDelete('cascade');
         });
     }
 

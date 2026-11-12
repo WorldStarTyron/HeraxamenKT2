@@ -18,7 +18,7 @@ return new class extends Migration
             $table->date('Afspraak_datum');
             $table->text('Afspraak_omschrijving');
 
-            $table->foreign('klant_id')->references('klant_id')->on('klanten')->onDelete('cascade');
+            $table->foreign('klant_id')->references('klant_id')->on('klantens')->onDelete('cascade');
         });
     }
 

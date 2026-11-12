@@ -3,12 +3,15 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\belongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Afspraken extends Model
 {
     protected $table = 'afsprakens';
-    protected $primaryKey = 'afspraken_id';
+
+    protected $primaryKey = 'afspraak_id';
+
     protected $fillable = [
         'klant_id',
         'Afspraak_title',
@@ -18,15 +21,13 @@ class Afspraken extends Model
 
     public $timestamps = false;
 
-
-
-     public function klanten(): BelongsTo
+    public function klanten(): BelongsTo
     {
         return $this->belongsTo(klanten::class, 'klant_id', 'klant_id');
     }
 
-        public function beurt(): BelongsTo
+    public function beurten(): HasMany
     {
-        return $this->belongsTo(beurt::class, 'afspraken_id', 'afspraken_id');
+        return $this->hasMany(beurt::class, 'afspraak_id', 'afspraak_id');
     }
 }
